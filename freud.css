@@ -20,8 +20,8 @@ header {
 
 header h1 {
   margin: 0;
-  text-align: center;
   font-size: 1.5em;
+  text-align: center;
 }
 
 .menu-toggle {
@@ -62,36 +62,47 @@ nav ul li a:hover {
   background-color: #555;
 }
 
-/* Mural Styles */
-.mural {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three items in a row */
-  gap: 20px;
-  padding: 80px 20px; /* Adjust for header height */
+/* Page Content Styles */
+main {
+  padding-top: 60px; /* Adjust for header height */
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
   text-align: center;
 }
 
-.mural-item {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  transition: transform 0.3s ease-in-out;
+.content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.mural-item img {
-  width: 100%;
+.image-container {
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  max-width: 60%; /* Adjust as needed */
   height: auto;
-  border-radius: 10px;
+  border-radius: 15px; /* Rounded corners */
+  border: 2px solid #ddd; /* Border around the image */
 }
 
-.mural-item:hover {
-  transform: scale(1.05);
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-.mural-item p {
-  margin-top: 10px;
+p {
   font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+  margin: 10px 0;
 }
 
 /* Footer Styles */
@@ -103,28 +114,38 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Scroll Behavior */
+body.scrolling-down footer {
+  transform: translateY(100%);
+}
+
+body.scrolling-up footer {
+  transform: translateY(0);
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+}
+
+#menu-icon {
+  width: 30px;
+  height: 30px;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-  /* Menu in mobile */
   nav {
-    width: 100%;
-    height: auto;
-    transform: translateX(0);
+      width: 100%;
+      height: auto;
+      transform: translateX(0);
   }
 
   .menu-toggle {
-    display: block;
-  }
-
-  /* Mural grid adjusts to a single column on mobile */
-  .mural {
-    grid-template-columns: 1fr; /* One item per row in smaller screens */
-  }
-
-  /* Adjust image size on mobile */
-  .mural-item img {
-    width: 80%; /* Reduce image size a bit for smaller screens */
+      display: block;
   }
 }
