@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  .menu-toggle {
+    display: none; /* Hide menu toggle for larger screens */
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #444;
+    color: #fff;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a:hover {
+    background-color: #555;
+  }
+  
+  /* Main Styles */
+  main {
+    padding: 60px 20px 20px 20px; /* Adjust for header height */
+  }
+  
+  .mural {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .mural-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mural-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .mural-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 1em;
+    transition: background 0.3s ease;
+  }
+  
+  /* Hover Effects */
+  .mural-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  .mural-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .mural-item:hover p {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Scroll Behavior */
+  body.scrolling-down footer {
+    transform: translateY(100%);
+  }
+  
+  body.scrolling-up footer {
+    transform: translateY(0);
+  }
+  
+  /* Menu Toggle */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+  
+  #menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    nav {
+      width: 100%;
+      height: auto;
+      transform: translateX(0);
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .mural {
+      grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
+    }
+  }
+  
+  
+  
