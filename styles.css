@@ -20,6 +20,7 @@ body {
   
   header h1 {
     margin: 0;
+    text-align: center;
     font-size: 1.5em;
   }
   
@@ -44,6 +45,7 @@ body {
   nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
   
   nav ul li {
@@ -60,61 +62,36 @@ body {
     background-color: #555;
   }
   
-  /* Main Styles */
-  main {
-    padding: 60px 20px 20px 20px; /* Adjust for header height */
-  }
-  
+  /* Mural Styles */
   .mural {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
-    gap: 10px;
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr); /* Three items in a row */
+    gap: 20px;
+    padding: 80px 20px; /* Adjust for header height */
+    text-align: center;
   }
   
   .mural-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px; /* Rounded corners */
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
   }
   
   .mural-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .mural-item:hover {
+    transform: scale(1.05);
   }
   
   .mural-item p {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 5px;
-    font-size: 1em;
-    transition: background 0.3s ease;
-  }
-  
-  /* Hover Effects */
-  .mural-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-  
-  .mural-item:hover img {
-    transform: scale(1.1);
-  }
-  
-  .mural-item:hover p {
-    background: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    font-size: 1.1em;
   }
   
   /* Footer Styles */
@@ -126,31 +103,11 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Scroll Behavior */
-  body.scrolling-down footer {
-    transform: translateY(100%);
-  }
-  
-  body.scrolling-up footer {
-    transform: translateY(0);
-  }
-  
-  /* Menu Toggle */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-  }
-  
-  #menu-icon {
-    width: 30px;
-    height: 30px;
   }
   
   /* Mobile Styles */
   @media (max-width: 768px) {
+    /* Menu in mobile */
     nav {
       width: 100%;
       height: auto;
@@ -161,10 +118,17 @@ body {
       display: block;
     }
   
+    /* Mural grid adjusts to a single column on mobile */
     .mural {
-      grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
+      grid-template-columns: 1fr; /* One item per row in smaller screens */
+    }
+  
+    /* Adjust image size on mobile */
+    .mural-item img {
+      width: 80%; /* Reduce image size a bit for smaller screens */
     }
   }
+  
   
   
   
